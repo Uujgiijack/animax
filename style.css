@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --mainBg: #11161f;
+    --navBg: #161d29;
+    --navBorder: 1px solid #1b2332;
+    --text: #c0c5ce;
+    --darkred: #c11010;
+    --red: #e92427;
+    --grey: #959eac;
+    --btnBG: #242e42;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    background-color: var(--mainBg);
+    color: var(--text);
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--mainBg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .85rem 1.25rem;
+}
+
+.header .logo {
+    width: 32px;
+    overflow: hidden;
+}
+
+.header .user {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.header .user .name {
+    display: none;
+}
+
+.header .user .dots {
+    position: relative;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--text);
+}
+
+.header .user .dots::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: inherit;
+    top: 8px;
+}
+
+.header .user .dots::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: inherit;
+    bottom: 8px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.items .circle {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle.red {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.circle.light {
+    border-color: #78909c;
+    color: #78909c;
+}
+
+.navigation {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--navBg);
+    padding: 0 .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation .nav-item {
+    width: 70px;
+    text-align: center;
+    color: var(--text);
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.active {
+    content: '';
+    position: absolute;
+    height: 2px;
+    background-color: var(--darkred);
+    width: 100%;
+    top: 0;
+    right: 0;
+}
+
+.navigation .logo {
+    width: 32px;
+    overflow: hidden;
+    padding: .85rem 0;
+    margin-bottom: .5rem;
+    display: none;
+}
+
+.header .tools {
+    display: none;
+    gap: .5rem;
+}
+
+.header .tools .toggle {
+    width: 37px;
+    height: 37px;
+    border-radius: 4px;
+    background-color: var(--btnBG);
+    color: var(--grey);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.header .tools .search {
+    height: 37px;
+    width: 400px;
+    padding: 4px;
+    display: flex;
+    background-color: var(--btnBG);
+    border-radius: 4px;
+    padding-right: 44px;
+    position: relative;
+}
+
+.header .tools .search .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-45%);
+    right: 14px;
+}
+
+.header .tools .search input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    color: white;
+}
+
+.header .tools .search input::placeholder {
+    color: var(--text);
+}
+
+.header .tools .search input:focus {
+    outline: none;
+}
+
+@media (min-width: 1024px) {
+    .header .tools {
+        display: flex;
+    }
+
+    .header {
+        padding-left: 90px;
+    }
+
+    .header .logo {
+        display: none;
+    }
+
+    .header .user .name {
+        display: block;
+    }
+
+    .navigation {
+        width: max-content;
+        flex-direction: column;
+        height: 100vh;
+        padding: 0;
+        justify-content: flex-start;
+    }
+
+    .navigation .logo {
+        display: block;
+    }
+
+    .active {
+        width: 2px;
+        height: 100%;
+    }
+
+    .circle.red {
+        display: none;
+    }
+
+    .circle.light {
+        border-color: var(--red);
+        color: var(--red);
+    }
+}
+.banner {
+   position: absolute;
+   top: 100px;
+   left: 50px;
+}
+.banner__logo img{
+    width: 400px;
+    height: 260px;
+}
+/* -------------slide swipper----------- */
+.wrap {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 400px;
+}
+
+.swiper {
+  
+}
+
+.swiper-slide {
+    background-color: rgb(238, 248, 248);
+}
+
+
+img {
+    /* width: 200px;
+    height: 100px; */
+    object-fit: cover;
+}
